@@ -16,9 +16,9 @@ let fetchPhotos = () => {
           <a href="${link}" class="btn btn-primary text-truncate" target="_blank">More from ${title}</a>
         </div>
       </div>`
-        for (const photo of photos.photos) {
-            container.innerHTML += createCard(photo.src.medium, photo.photographer, photo.alt, photo.photographer_url)
-        }
+        photos.photos.forEach(item => {
+            container.innerHTML += createCard(item.src.medium, item.photographer, item.alt, item.photographer_url)
+        });
     })
 }
 
