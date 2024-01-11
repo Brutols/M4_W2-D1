@@ -14,9 +14,14 @@ let fetchPhotos = () => {
   )
     .then((response) => response.json())
     .then((photos) => {
-      console.log(photos.photos);
       photos.photos.forEach((item) => {
-        container.innerHTML += components.createCard(
+        // container.innerHTML += components.createCard(
+        //   item.src.medium,
+        //   item.photographer,
+        //   item.alt,
+        //   item.photographer_url
+        // );
+        components.cardAppendChild(
           item.src.medium,
           item.photographer,
           item.alt,
@@ -24,6 +29,7 @@ let fetchPhotos = () => {
         );
       });
     });
+  // .catch((error) => alert(`${error}`))
 };
 
 window.onload = fetchPhotos();
